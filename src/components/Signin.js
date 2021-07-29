@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { firebaseAuth } from '../provider/AuthProvider';
 
-const SignUp = () => {
-  const { handleSignUp, inputs, setInputs, errors } = useContext(firebaseAuth);
-  console.log(handleSignUp);
+const Signin = () => {
+  const { handleSignin, inputs, setInputs, errors } = useContext(firebaseAuth);
+  console.log(handleSignin);
   function handleSubmit(e) {
     e.preventDefault();
     console.log('handleSubmit');
@@ -29,7 +29,7 @@ const SignUp = () => {
         value={inputs.password}
         placeholder='password'
       />
-      <button>SignUp</button>
+      <button>Signin</button>
       {errors.length < 0
         ? errors.map((error) => <p className='error'>{error}</p>)
         : null}
@@ -37,4 +37,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signin;
